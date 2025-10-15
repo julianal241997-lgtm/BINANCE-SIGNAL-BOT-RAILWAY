@@ -1,0 +1,12 @@
+============================
+RUN GUIDE — Railway Cron (every 2 hours)
+============================
+1) Go to https://railway.app and create an account.
+2) Create a New Project → Deploy from GitHub or Upload this ZIP.
+3) Once deployed, open the Service → "Variables & Deploy" and set:
+   - Build Command: pip install -r requirements.txt
+   - Start Command: python scan_bot.py
+4) Add a CRON job (Service → "Schedules" / "Cron"):
+   - Command: python scan_bot.py
+   - Schedule: Every 2 hours (or use cron: 0 */2 * * *)
+5) Save. Railway will execute the job every 2 hours. The process exits after sending alerts/summary.
